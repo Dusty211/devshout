@@ -33,4 +33,16 @@ db.once('open', function() {
     fluffy.speak();
   });
 
+  //Find all kittens
+  Kitten.find(function (err, kittens) {
+    if (err) return console.error(err);
+    console.log(kittens)
+  });
+
+  //Find all kittens whos name begins with 'fluff'
+  Kitten.find({ name: /^fluff/ }, function (err, kittens) {
+    if (err) return console.error(err);
+    console.log(kittens)
+  });
+
 });
