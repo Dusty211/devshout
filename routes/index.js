@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-//original static html homepage
+////original static html homepage
 /* GET home page. */
 // router.get('/', function(req, res, next) {
 //   res.render('index', { title: 'Express' });
 // });
 
-//middleware examples
+////middleware examples
 const myLogger = function (req, res, next) {
   console.log('LOGGED')
   next()
@@ -21,7 +21,7 @@ const requestTime = function (req, res, next) {
 router.use(myLogger)
 router.use(requestTime)
 
-//example route
+////example route
 router.get('/', function (req, res) {
   // let responseText = 'Hello World!<br>'
   // responseText += '<small>Requested at: ' + req.requestTime + '</small>'
