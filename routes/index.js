@@ -23,9 +23,28 @@ router.use(requestTime)
 
 //example route
 router.get('/', function (req, res) {
-  let responseText = 'Hello World!<br>'
-  responseText += '<small>Requested at: ' + req.requestTime + '</small>'
-  res.send(responseText)
+  // let responseText = 'Hello World!<br>'
+  // responseText += '<small>Requested at: ' + req.requestTime + '</small>'
+  // res.send(responseText)
+  res.json({
+    "TestArrayKey": [
+      {
+        "1": "one",
+        "2": "two",
+        "3": "three",
+      },
+      {
+        "4": "four",
+        "5": "five",
+        "6": "six",
+      },
+      {
+        "7": "seven",
+        "8": "eight",
+        "9": "nine",
+      },
+    ],
+  })
 })
 
 
