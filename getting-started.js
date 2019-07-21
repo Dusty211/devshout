@@ -1,13 +1,13 @@
 
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test2', {useNewUrlParser: true});
 
-let db = mongoose.connection;
+const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
 
   //Schema
-  let kittySchema = new mongoose.Schema({
+  const kittySchema = new mongoose.Schema({
     name: String
   });
 
@@ -20,14 +20,14 @@ db.once('open', function() {
   }
 
   //Model
-  let Kitten = mongoose.model('Kitten', kittySchema);
+  const Kitten = mongoose.model('Kitten', kittySchema);
 
   //Document
-  let silence = new Kitten({ name: 'Silence'});
+  const silence = new Kitten({ name: 'Silence'});
   console.log(silence.name);
 
   //Saved Document
-  let fluffy = new Kitten({ name: 'fluffy' });
+  const fluffy = new Kitten({ name: 'fluffy' });
   fluffy.save(function (err, fluffy) {
     if (err) return console.error(err);
     fluffy.speak();
