@@ -4,7 +4,7 @@ function userModel() {
 
   //Schema
   const userSchema = new mongoose.Schema({
-    github: String,
+    githubId: Number,
     screenname: String,
     avatar: String,
     following: { type: [mongoose.Schema.Types.ObjectId], ref: 'User', index: true }
